@@ -50,13 +50,16 @@ export default function EditCoreTeam() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => {
+    const { name, value } = e.target;
 
+    setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+    }));
+};
   const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;

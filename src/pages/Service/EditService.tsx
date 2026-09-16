@@ -19,14 +19,23 @@ export default function EditService() {
   const [categories, setCategories] = useState<any[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const [formData, setFormData] = useState({
+interface ServiceFormData {
+    categoryId: string;
+    serviceName: string;
+    mainImage: string;
+    featuredImage: string;
+    briefIntro: string;
+    details: string;
+}
+
+const [formData, setFormData] = useState<ServiceFormData>({
     categoryId: "",
     serviceName: "",
-    briefIntro: "",
-    details: "",
     mainImage: "",
     featuredImage: "",
-  });
+    briefIntro: "",
+    details: "",
+});
   const validateImage = (
     file: File | null,
     setImage: (f: File | null) => void,
