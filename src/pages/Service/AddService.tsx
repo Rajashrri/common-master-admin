@@ -38,14 +38,16 @@ export default function AddService() {
     setPreview(URL.createObjectURL(file));
   };
   const [categories, setCategories] = useState<any[]>([]);
-
-  const [formData, setFormData] = useState({
+const [formData, setFormData] = useState({
     categoryId: "",
     serviceName: "",
-    slug: "",
+    mainImage: "",
+      slug: "",
+    featuredImage: "",
     briefIntro: "",
     details: "",
-  });
+});
+
 
   const [mainImage, setMainImage] = useState<File | null>(null);
 

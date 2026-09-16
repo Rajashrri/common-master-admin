@@ -23,6 +23,8 @@ interface ServiceFormData {
     categoryId: string;
     serviceName: string;
     mainImage: string;
+        slug: string;
+
     featuredImage: string;
     briefIntro: string;
     details: string;
@@ -31,6 +33,7 @@ interface ServiceFormData {
 const [formData, setFormData] = useState<ServiceFormData>({
     categoryId: "",
     serviceName: "",
+      slug: "",
     mainImage: "",
     featuredImage: "",
     briefIntro: "",
