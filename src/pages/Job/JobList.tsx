@@ -30,6 +30,7 @@ interface Job {
   featuredImage: string;
 
   status: number;
+  featured: number;
 
   categoryId?: {
     categoryName: string;

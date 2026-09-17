@@ -38,16 +38,25 @@ export default function AddService() {
     setPreview(URL.createObjectURL(file));
   };
   const [categories, setCategories] = useState<any[]>([]);
-const [formData, setFormData] = useState({
-    categoryId: "",
-    serviceName: "",
-    mainImage: "",
-      slug: "",
-    featuredImage: "",
-    briefIntro: "",
-    details: "",
+const [formData, setFormData] = useState<formData>({
+  categoryId: "",
+  serviceName: "",
+  slug: "",
+  briefIntro: "",
+  details: "",
+  mainImage: "",
+  featuredImage: "",
 });
 
+interface formData {
+  categoryId: string;
+  serviceName: string;
+  slug: string;
+  briefIntro: string;
+  details: string;
+  mainImage: string;
+  featuredImage: string;
+}
 
   const [mainImage, setMainImage] = useState<File | null>(null);
 
@@ -57,13 +66,14 @@ const [formData, setFormData] = useState({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [featuredPreview, setFeaturedPreview] = useState("");
 
-  const [errors, setErrors] = useState({
-    categoryId: "",
-    serviceName: "",
-    mainImage: "",
-    featuredImage: "",
-  });
-
+const [errors, setErrors] = useState({
+  categoryId: "",
+  serviceName: "",
+  briefIntro: "",
+  details: "",
+  mainImage: "",
+  featuredImage: "",
+});
   useEffect(() => {
     fetchCategories();
   }, []);
