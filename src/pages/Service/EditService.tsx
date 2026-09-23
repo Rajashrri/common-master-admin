@@ -74,10 +74,23 @@ const [formData, setFormData] = useState<ServiceFormData>({
 
   const [featuredPreview, setFeaturedPreview] = useState("");
 
-  const [errors, setErrors] = useState({
-    categoryId: "",
-    serviceName: "",
-  });
+ interface ErrorState {
+  categoryId: string;
+  serviceName: string;
+  briefIntro: string;
+  details: string;
+  mainImage: string;
+  featuredImage: string;
+}
+
+const [errors, setErrors] = useState<ErrorState>({
+  categoryId: "",
+  serviceName: "",
+  briefIntro: "",
+  details: "",
+  mainImage: "",
+  featuredImage: "",
+});
 
   useEffect(() => {
     fetchCategories();
