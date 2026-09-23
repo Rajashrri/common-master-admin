@@ -123,23 +123,15 @@ export default function EditEvent() {
       if (response.data.success) {
         const event = response.data.data;
 
-        setFormData({
-          categoryId: event.categoryId?._id || "",
-
-          title: event.title,
-
-          slug: event.slug,
-          fromDate: "",
-          endDate: "",
-          timing: "",
-          entryFee: event.entryFee,
-
-          ticketLink: event.ticketLink,
-
-          briefIntro: event.briefIntro,
-
-          details: event.details,
-        });
+       setFormData({
+  categoryId: event.categoryId?._id || "",
+  title: event.title || "",
+  slug: event.slug || "",
+  entryFee: event.entryFee || "",
+  ticketLink: event.ticketLink || "",
+  briefIntro: event.briefIntro || "",
+  details: event.details || "",
+});
         setFromDate(event.fromDate ? new Date(event.fromDate) : null);
 
         setEndDate(event.endDate ? new Date(event.endDate) : null);
