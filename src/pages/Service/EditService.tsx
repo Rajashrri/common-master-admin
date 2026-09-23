@@ -114,6 +114,8 @@ const [formData, setFormData] = useState<ServiceFormData>({
           slug: item.slug,
           briefIntro: item.briefIntro,
           details: item.details,
+           mainImage: item.mainImage || "",
+  featuredImage: item.featuredImage || "",
         });
 
         setMainPreview(item.mainImage);

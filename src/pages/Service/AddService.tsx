@@ -38,7 +38,7 @@ export default function AddService() {
     setPreview(URL.createObjectURL(file));
   };
   const [categories, setCategories] = useState<any[]>([]);
-const [formData, setFormData] = useState<formData>({
+const [formData, setFormData] = useState<ServiceFormData>({
   categoryId: "",
   serviceName: "",
   slug: "",
@@ -47,8 +47,7 @@ const [formData, setFormData] = useState<formData>({
   mainImage: "",
   featuredImage: "",
 });
-
-interface formData {
+interface ServiceFormData {
   categoryId: string;
   serviceName: string;
   slug: string;
@@ -57,6 +56,7 @@ interface formData {
   mainImage: string;
   featuredImage: string;
 }
+
 
   const [mainImage, setMainImage] = useState<File | null>(null);
 

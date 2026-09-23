@@ -29,9 +29,9 @@ interface Job {
 
   featuredImage: string;
 
-  status: number;
-  featured: number;
 
+  status: number;
+ featured?: boolean;
   categoryId?: {
     categoryName: string;
   };
